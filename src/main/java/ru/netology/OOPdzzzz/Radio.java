@@ -2,18 +2,50 @@ package ru.netology.OOPdzzzz;
 
 public class Radio {
 
-    private int currentStation;
+    private int minStation = 0;
+    private int maxStation = 9;
+    private int currentStation = minStation;
+    private int minVolume = 0;
+    private int maxVolume = 100;
+    private int currentVolume;
+
+    public Radio(int size){
+        maxStation = minStation + size - 1;
+    }
+
+    public Radio(){ // конструктор для значений по умолчанию
+    }
 
     public int getCurrentStation() {
         return currentStation;
     }
 
+    public int getMinStation() {
+        return minStation;
+    }
+
+    public int getMaxStation() {
+        return maxStation;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public int getMinVolume(){
+        return minVolume;
+    }
+
+    public int getMaxVolume(){
+        return maxVolume;
+    }
+
     public void setCurrentStation(int newCurrentStation) {
-        if (newCurrentStation > 9) {
-            newCurrentStation = 0;
+        if (newCurrentStation > maxStation) {
+            newCurrentStation = minStation;
         }
-        if (newCurrentStation < 0) {
-            newCurrentStation = 9;
+        if (newCurrentStation < minStation) {
+            newCurrentStation = maxStation;
         }
         currentStation = newCurrentStation;
     }
@@ -29,17 +61,12 @@ public class Radio {
     }
 
 
-    private int currentVolume;
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
 
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 100) {
+        if (newCurrentVolume > maxVolume) {
             return;
         }
-        if (newCurrentVolume < 0) {
+        if (newCurrentVolume < minVolume) {
             return;
         }
         currentVolume = newCurrentVolume;
