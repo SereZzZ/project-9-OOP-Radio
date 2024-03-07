@@ -7,7 +7,7 @@ import ru.netology.OOPdzzzz.Radio;
 public class RadioTest {
 
     @Test
-    public void testParametrizedConstructor() { //тестирует параметризованный конструктор
+    public void testParametrizedConstructorStation() { //тестирует параметризованный конструктор
         Radio radio = new Radio(30);
 
         Assertions.assertEquals(0, radio.getMinStation());
@@ -16,7 +16,7 @@ public class RadioTest {
     }
 
     @Test
-    public void testUnparametrizedConstructor() { //тестирует непараметризованный конструктор
+    public void testUnParametrizedConstructorStation() { //тестирует непараметризованный конструктор
         Radio radio = new Radio();
 
         Assertions.assertEquals(0, radio.getMinStation());
@@ -190,5 +190,13 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void testParametrizedConstructorVolume(){
+        Radio radio = new Radio();
+
+        Assertions.assertEquals(0, radio.getMinVolume());
+        Assertions.assertEquals(100, radio.getMaxVolume());
+        Assertions.assertEquals(0, radio.getCurrentVolume());
+    }
 
 }

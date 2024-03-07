@@ -2,18 +2,19 @@ package ru.netology.OOPdzzzz;
 
 public class Radio {
 
-    private int minStation = 0;
+    private final int minStation = 0;
     private int maxStation = 9;
     private int currentStation = minStation;
-    private int minVolume = 0;
-    private int maxVolume = 100;
-    private int currentVolume;
+    private final int minVolume = 0;
+    private final int maxVolume = 100;
+    private int currentVolume = minVolume;
 
-    public Radio(int size){
+    public Radio(int size) {
         maxStation = minStation + size - 1;
     }
 
-    public Radio(){ // конструктор для значений по умолчанию
+    public Radio() {
+
     }
 
     public int getCurrentStation() {
@@ -32,11 +33,11 @@ public class Radio {
         return currentVolume;
     }
 
-    public int getMinVolume(){
+    public int getMinVolume() {
         return minVolume;
     }
 
-    public int getMaxVolume(){
+    public int getMaxVolume() {
         return maxVolume;
     }
 
@@ -59,7 +60,6 @@ public class Radio {
         int target = currentStation - 1;
         setCurrentStation(target);
     }
-
 
 
     public void setCurrentVolume(int newCurrentVolume) {
